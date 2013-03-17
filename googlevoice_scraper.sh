@@ -11,7 +11,7 @@ rm -f numbers || true
 touch numbers
 
 # Get area codes
-curl -k --cookie "$COOKIES" "${URL}?ac=[201-999]&start=0&country=US" | grep -ho "+1[0-9]\{3\}" | cut -b3-5 | sort -u >> areacodes
+curl -ks --cookie "$COOKIES" "${URL}?ac=[201-999]&start=0&country=US" | grep -ho "+1[0-9]\{3\}" | cut -b3-5 | sort -u >> areacodes
 
 # Get numbers (BFS on digits)
 for AREACODE in `cat areacodes`; do
