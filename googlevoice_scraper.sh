@@ -60,14 +60,14 @@ for AREACODE in `cat areacodes`; do
 done
 
 grep "\([0-9]\)\1.*\([0-9]\)\2.*\([0-9]\)\3" all > results/pairs
-grep '\([0-9]\)\1\{3\}' all > results/repetitions
+grep "\([0-9]\)\1\{3\}" all > results/repetitions
 grep "\([0-9]\)\([0-9]\)\([0-9]\)\([0-9]\).?\4\3\2\1" all > results/palindromes
 grep "\([0-9]\)\([0-9]\)\1\2\1\2" all > results/toggle
 grep "\([0-9]\)\([0-9]\)\1\2.*\([0-9]\)\([0-9]\)\3\4\3" all >> results/toggle
 grep "\([0-9]\)\([0-9]\)\(\1|\2\)\{4\}" all > results/twodigits
 grep "\([0-9]\)\([0-9]\)\1\2\1.*\([0-9]\)\([0-9]\)\3\4\3" all > results/ABABACDCDC
 grep "\([0-9]\)\1.*\([0-9]\)\2.*\([0-9]\)\3" all > results/tripledouble
-grep '[0-9][0-9][0-9]\([01]\)\([01]\)\([01]\)\([01]\)\([01]\)\([01]\)\([01]\)' all > results/binary
+grep "[0-9][0-9][0-9]\([01]\)\([01]\)\([01]\)\([01]\)\([01]\)\([01]\)\([01]\)" all > results/binary
 grep "[0-9]*1337[0-9]*" all > results/1337
 
 rm -f all
