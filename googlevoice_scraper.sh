@@ -20,31 +20,31 @@ for AREACODE in `cat areacodes`; do
 
 	echo -n "Progress: 1%... ";
 
-	cut -b1-3 numbers | sort -u | (while read LINE; do CURL_URL="${URL}?ac=${LINE:0:3}&q=$LINE[0-9]&start=0"; curl -ks --cookie "$COOKIES" "$CURL_URL"; done) | pcregrep --buffer-size=32M -ho '\d{10}\b' | sort -u >> numbers
+	cut -b1-3 numbers | sort -u | (while read LINE; do CURL_URL="${URL}?ac=${LINE:0:3}&q=$LINE[0-9]&start=0"; curl -ks --cookie "$COOKIES" "$CURL_URL"; done) | grep -ho '[0-9]\{10\}' | sort -u >> numbers
 
 	echo -n "10%... ";
 
-	cut -b1-4 numbers | sort -u | (while read LINE; do CURL_URL="${URL}?ac=${LINE:0:3}&q=$LINE[0-9]&start=0"; curl -ks --cookie "$COOKIES" "$CURL_URL"; done) | pcregrep --buffer-size=32M -ho '\d{10}\b' | sort -u >> numbers
+	cut -b1-4 numbers | sort -u | (while read LINE; do CURL_URL="${URL}?ac=${LINE:0:3}&q=$LINE[0-9]&start=0"; curl -ks --cookie "$COOKIES" "$CURL_URL"; done) | grep -ho '[0-9]\{10\}' | sort -u >> numbers
 
 	echo -n "20%... ";
 
-	cut -b1-5 numbers | sort -u | (while read LINE; do CURL_URL="${URL}?ac=${LINE:0:3}&q=$LINE[0-9]&start=0"; curl -ks --cookie "$COOKIES" "$CURL_URL"; done) | pcregrep --buffer-size=32M -ho '\d{10}\b' | sort -u >> numbers
+	cut -b1-5 numbers | sort -u | (while read LINE; do CURL_URL="${URL}?ac=${LINE:0:3}&q=$LINE[0-9]&start=0"; curl -ks --cookie "$COOKIES" "$CURL_URL"; done) | grep -ho '[0-9]\{10\}' | sort -u >> numbers
 
 	echo -n "42%... ";
 
-	cut -b1-6 numbers | sort -u | (while read LINE; do CURL_URL="${URL}?ac=${LINE:0:3}&q=$LINE[0-9]&start=0"; curl -ks --cookie "$COOKIES" "$CURL_URL"; done) | pcregrep --buffer-size=32M -ho '\d{10}\b' | sort -u >> numbers
+	cut -b1-6 numbers | sort -u | (while read LINE; do CURL_URL="${URL}?ac=${LINE:0:3}&q=$LINE[0-9]&start=0"; curl -ks --cookie "$COOKIES" "$CURL_URL"; done) | grep -ho '[0-9]\{10\}' | sort -u >> numbers
 
 	echo -n "60%... ";
 
-	cut -b1-7 numbers | sort -u | (while read LINE; do CURL_URL="${URL}?ac=${LINE:0:3}&q=$LINE[0-9]&start=0"; curl -ks --cookie "$COOKIES" "$CURL_URL"; done) | pcregrep --buffer-size=32M -ho '\d{10}\b' | sort -u >> numbers
+	cut -b1-7 numbers | sort -u | (while read LINE; do CURL_URL="${URL}?ac=${LINE:0:3}&q=$LINE[0-9]&start=0"; curl -ks --cookie "$COOKIES" "$CURL_URL"; done) | grep -ho '[0-9]\{10\}' | sort -u >> numbers
 
 	echo -n "80%... ";
 
-	cut -b1-8 numbers | sort -u | (while read LINE; do CURL_URL="${URL}?ac=${LINE:0:3}&q=$LINE[0-9]&start=0"; curl -ks --cookie "$COOKIES" "$CURL_URL"; done) | pcregrep --buffer-size=32M -ho '\d{10}\b' | sort -u >> numbers
+	cut -b1-8 numbers | sort -u | (while read LINE; do CURL_URL="${URL}?ac=${LINE:0:3}&q=$LINE[0-9]&start=0"; curl -ks --cookie "$COOKIES" "$CURL_URL"; done) | grep -ho '[0-9]\{10\}' | sort -u >> numbers
 
 	echo -n "94%... ";
 
-	cut -b1-8 numbers | sort -u | (while read LINE; do CURL_URL="${URL}?ac=${LINE:0:3}&q=$LINE[0-9]&start=5"; curl -ks --cookie "$COOKIES" "$CURL_URL"; done) | pcregrep --buffer-size=32M -ho '\d{10}\b' | sort -u >> numbers
+	cut -b1-8 numbers | sort -u | (while read LINE; do CURL_URL="${URL}?ac=${LINE:0:3}&q=$LINE[0-9]&start=5"; curl -ks --cookie "$COOKIES" "$CURL_URL"; done) | grep -ho '[0-9]\{10\}' | sort -u >> numbers
 
 	echo "Done.";
 
