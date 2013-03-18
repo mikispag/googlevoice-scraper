@@ -69,5 +69,6 @@ grep "\([0-9]\)\([0-9]\)\1\2\1.*\([0-9]\)\([0-9]\)\3\4\3" all > results/ABABACDC
 grep "\([0-9]\)\1.*\([0-9]\)\2.*\([0-9]\)\3" all > results/tripledouble
 grep "[0-9][0-9][0-9]\([01]\)\([01]\)\([01]\)\([01]\)\([01]\)\([01]\)\([01]\)" all > results/binary
 grep "[0-9]*1337[0-9]*" all > results/1337
+grep "[0-9]*1337$" all > results/1337_end
 
 rm -f all
