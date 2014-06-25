@@ -1,5 +1,11 @@
 #!/bin/bash
 
+##
+## ORIGINALLY FROM 
+## http://privacylog.blogspot.com/2009/08/full-google-hack.html
+## Published by William Entriken
+##
+
 URL="https://www.google.com/voice/b/0/setup/searchnew/"
 
 # Add your Google cookies here
