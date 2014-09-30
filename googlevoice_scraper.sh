@@ -6,7 +6,7 @@
 ## Published by William Entriken
 ##
 
-URL="https://www.google.com/voice/b/0/setup/searchnew/"
+URL="https://www.google.com/voice/setup/search/"
 
 # Add your Google cookies here
 COOKIES="xxx"
@@ -17,7 +17,7 @@ rm -f numbers || true
 touch numbers
 
 # Get area codes
-curl -ks --cookie "$COOKIES" "${URL}?ac=[201-999]&start=0&country=US" | grep -ho "+1[0-9]\{3\}" | cut -b3-5 | sort -u >> areacodes
+curl -ks --cookie "$COOKIES" "${URL}?ac=[201-999]&start=0&lite=1&country=US" | grep -ho "+1[0-9]\{3\}" | cut -b3-5 | sort -u >> areacodes
 
 # Get numbers (BFS on digits)
 for AREACODE in `cat areacodes`; do
